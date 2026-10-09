@@ -1,0 +1,10 @@
+# Archivos que son temporales de Pytest
+.pytest_cache/
+
+# Archivos del Python que se genera automáticamente
+__pycache__/
+*.py[cod]
+
+# Entornos virtuales
+.venv/
+venv/

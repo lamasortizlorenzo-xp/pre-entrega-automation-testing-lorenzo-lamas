@@ -1,0 +1,151 @@
+2026-10-09 17:40:23,650 | INFO | INICIO: tests/test_saucedemo.py::test_login_exitoso
+2026-10-09 17:40:27,438 | INFO | RESULTADO: tests/test_saucedemo.py::test_login_exitoso
+2026-10-09 17:40:27,441 | INFO | INICIO: tests/test_saucedemo.py::test_verificacion_catalogo
+2026-10-09 17:40:30,959 | INFO | RESULTADO: tests/test_saucedemo.py::test_verificacion_catalogo
+2026-10-09 17:40:30,964 | INFO | INICIO: tests/test_saucedemo.py::test_interaccion_carrito
+2026-10-09 17:40:34,845 | INFO | RESULTADO: tests/test_saucedemo.py::test_interaccion_carrito
+2026-10-09 19:34:24,739 | INFO | INICIO: tests/test_saucedemo.py::test_captura_temporal
+2026-10-09 19:34:29,554 | ERROR | FALLO: tests/test_saucedemo.py::test_captura_temporal
+2026-10-09 19:34:33,647 | WARNING | Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=63753): Failed to establish a new connection: [WinError 10061] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión")': /session/f67c2fbd6d1dcb0209276b29db9f3a1b/screenshot
+2026-10-09 19:34:37,726 | WARNING | Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=63753): Failed to establish a new connection: [WinError 10061] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión")': /session/f67c2fbd6d1dcb0209276b29db9f3a1b/screenshot
+2026-10-09 19:34:41,818 | WARNING | Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=63753): Failed to establish a new connection: [WinError 10061] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión")': /session/f67c2fbd6d1dcb0209276b29db9f3a1b/screenshot
+2026-10-09 19:34:45,925 | ERROR | No se pudo guardar la captura.
+Traceback (most recent call last):
+  File "C:\Users\Lorenzo\AppData\Local\Programs\Python\Python315\Lib\site-packages\urllib3\connection.py", line 239, in _new_conn
+    sock = connection.create_connection(
+        (self._dns_host, self.port),
+    ...<2 lines>...
+        socket_options=self.socket_options,
+    )
+  File "C:\Users\Lorenzo\AppData\Local\Programs\Python\Python315\Lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    raise err
+  File "C:\Users\Lorenzo\AppData\Local\Programs\Python\Python315\Lib\site-packages\urllib3\util\connection.py", line 73, in create_connection
+    sock.connect(sa)
+    ~~~~~~~~~~~~^^^^
+ConnectionRefusedError: [WinError 10061] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Lorenzo\AppData\Local\Programs\Python\Python315\Lib\site-packages\urllib3\connectionpool.py", line 793, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "C:\Users\Lorenzo\AppData\Local\Programs\Python\Python315\Lib\site-packages\urllib3\connectionpool.py", line 499, in _make_request
+    conn.request(
+    ~~~~~~~~~~~~^
+        method,
+        ^^^^^^^
+    ...<6 lines>...
+        enforce_content_length=enforce_content_length,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Lorenzo\AppData\Local\Programs\Python\Python315\Lib\site-packages\urllib3\connection.py", line 567, in request
+    self.endheaders()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\Lorenzo\AppData\Local\Programs\Python\Python315\Lib\http\client.py", line 1393, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lorenzo\AppData\Local\Programs\Python\Python315\Lib\http\client.py", line 1153, in _send_output
+    self.send(msg)
+    ~~~~~~~~~^^^^^
+  File "C:\Users\Lorenzo\AppData\Local\Programs\Python\Python315\Lib\http\client.py", line 1097, in send
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "C:\Users\Lorenzo\AppData\Local\Programs\Python\Python315\Lib\site-packages\urllib3\connection.py", line 398, in connect
+    self.sock = self._new_conn()
+                ~~~~~~~~~~~~~~^^
+  File "C:\Users\Lorenzo\AppData\Local\Programs\Python\Python315\Lib\site-packages\urllib3\connection.py", line 254, in _new_conn
+    raise NewConnectionError(
+        self, f"Failed to establish a new connection: {e}"
+    ) from e
+urllib3.exceptions.NewConnectionError: HTTPConnection(host='localhost', port=63753): Failed to establish a new connection: [WinError 10061] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Lorenzo\Desktop\pre-entrega-automation-testing-LorenzoLamasOrtiz\tests\conftest.py", line 57, in registrar_resultado_y_captura
+    guardada = driver.save_screenshot(str(ruta))
+  File "C:\Users\Lorenzo\AppData\Local\Programs\Python\Python315\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 994, in save_screenshot
+    return self.get_screenshot_as_file(filename)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\Lorenzo\AppData\Local\Programs\Python\Python315\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 971, in get_screenshot_as_file
+    png = self.get_screenshot_as_png()
+  File "C:\Users\Lorenzo\AppData\Local\Programs\Python\Python315\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 1002, in get_screenshot_as_png
+    return b64decode(self.get_screenshot_as_base64().encode("ascii"))
+                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Lorenzo\AppData\Local\Programs\Python\Python315\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 1012, in get_screenshot_as_base64
+    return self.execute(Command.SCREENSHOT)["value"]
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lorenzo\AppData\Local\Programs\Python\Python315\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 503, in execute
+    response = cast(RemoteConnection, self.command_executor).execute(driver_command, params)
+  File "C:\Users\Lorenzo\AppData\Local\Programs\Python\Python315\Lib\site-packages\selenium\webdriver\remote\remote_connection.py", line 435, in execute
+    return self._request(command_info[0], url, body=data)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lorenzo\AppData\Local\Programs\Python\Python315\Lib\site-packages\selenium\webdriver\remote\remote_connection.py", line 459, in _request
+    response = self._conn.request(method, url, body=body, headers=headers, timeout=self._client_config.timeout)
+  File "C:\Users\Lorenzo\AppData\Local\Programs\Python\Python315\Lib\site-packages\urllib3\_request_methods.py", line 135, in request
+    return self.request_encode_url(
+           ~~~~~~~~~~~~~~~~~~~~~~~^
+        method,
+        ^^^^^^^
+    ...<3 lines>...
+        **urlopen_kw,
+        ^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Lorenzo\AppData\Local\Programs\Python\Python315\Lib\site-packages\urllib3\_request_methods.py", line 182, in request_encode_url
+    return self.urlopen(method, url, **extra_kw)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lorenzo\AppData\Local\Programs\Python\Python315\Lib\site-packages\urllib3\poolmanager.py", line 459, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "C:\Users\Lorenzo\AppData\Local\Programs\Python\Python315\Lib\site-packages\urllib3\connectionpool.py", line 886, in urlopen
+    return self.urlopen(
+           ~~~~~~~~~~~~^
+        method,
+        ^^^^^^^
+    ...<13 lines>...
+        **response_kw,
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Lorenzo\AppData\Local\Programs\Python\Python315\Lib\site-packages\urllib3\connectionpool.py", line 886, in urlopen
+    return self.urlopen(
+           ~~~~~~~~~~~~^
+        method,
+        ^^^^^^^
+    ...<13 lines>...
+        **response_kw,
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Lorenzo\AppData\Local\Programs\Python\Python315\Lib\site-packages\urllib3\connectionpool.py", line 886, in urlopen
+    return self.urlopen(
+           ~~~~~~~~~~~~^
+        method,
+        ^^^^^^^
+    ...<13 lines>...
+        **response_kw,
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Lorenzo\AppData\Local\Programs\Python\Python315\Lib\site-packages\urllib3\connectionpool.py", line 847, in urlopen
+    retries = retries.increment(
+        method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+    )
+  File "C:\Users\Lorenzo\AppData\Local\Programs\Python\Python315\Lib\site-packages\urllib3\util\retry.py", line 555, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=63753): Max retries exceeded with url: /session/f67c2fbd6d1dcb0209276b29db9f3a1b/screenshot (Caused by NewConnectionError("HTTPConnection(host='localhost', port=63753): Failed to establish a new connection: [WinError 10061] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión"))
+2026-10-09 19:37:12,343 | INFO | INICIO: tests/test_saucedemo.py::test_captura_temporal
+2026-10-09 19:37:13,614 | ERROR | FALLO: tests/test_saucedemo.py::test_captura_temporal
+2026-10-09 19:37:13,750 | INFO | CAPTURA GUARDADA: C:\Users\Lorenzo\Desktop\pre-entrega-automation-testing-LorenzoLamasOrtiz\reports\capturas\test_captura_temporal.png
+2026-10-09 19:40:44,907 | INFO | INICIO: tests/test_saucedemo.py::test_login_exitoso
+2026-10-09 19:40:46,215 | INFO | RESULTADO: tests/test_saucedemo.py::test_login_exitoso
+2026-10-09 19:40:48,424 | INFO | INICIO: tests/test_saucedemo.py::test_verificacion_catalogo
+2026-10-09 19:40:50,296 | INFO | RESULTADO: tests/test_saucedemo.py::test_verificacion_catalogo
+2026-10-09 19:40:52,450 | INFO | INICIO: tests/test_saucedemo.py::test_interaccion_carrito
+2026-10-09 19:40:54,200 | INFO | RESULTADO: tests/test_saucedemo.py::test_interaccion_carrito
